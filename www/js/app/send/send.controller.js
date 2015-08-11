@@ -31,7 +31,9 @@
     });
 
     $scope.send = function(){
-      APIHandler.postMessage($scope.choosenFriends);
+      APIHandler.postMessage($scope.choosenFriends).then(function(response){
+        // go to home screen
+      });
     }
   });
 }(angular.module('spotchat')))

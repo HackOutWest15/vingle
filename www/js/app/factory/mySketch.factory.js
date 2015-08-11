@@ -26,7 +26,7 @@
             sketch.touchStarted = function () {
                 if (getAudioTime() > 3000){
                     $rootScope.lines = lines;
-                    $state.go('playback');
+                    $state.go('send');
                 }
                 lastTouch = null;
             };
