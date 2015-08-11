@@ -21,7 +21,7 @@
 </div>
 <div class="bar bar-footer">
   <div class="pull-left">
-    <img ng-repeat="friend in choosenFriends" ng-src="http://graph.facebook.com/{{friend.id}}/picture?width=270&height=270" class="pull-left choosen-friend">
+    <img ng-repeat="friend in choosenFriends | limitTo: 4" ng-src="http://graph.facebook.com/{{friend.id}}/picture?width=270&height=270" class="pull-left choosen-friend">
   </div>
   <button class="button button-clear pull-right">Send</button>
 </div>
