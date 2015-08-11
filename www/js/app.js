@@ -17,3 +17,18 @@ angular.module('spotchat', ['ionic'])
     }
   });
 })
+.run(function($state, $stateParams, $rootScope){
+  $rootScope.API_URL = '10.47.12.141:1337';
+  if(window.localStorage.currentUser == undefined){
+    // $state.go('login')
+    window.location.replace('/#/login')
+  }
+})
+.config(function($urlRouterProvider){
+
+  if(window.localStorage.currentUser != undefined){
+    $urlRouterProvider.otherwise('/');
+  }else{
+    $urlRouterProvider.otherwise('/login');
+  }
+})

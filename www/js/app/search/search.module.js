@@ -5,6 +5,5 @@
       controller: 'searchController',
       templateUrl: 'js/app/search/search.html'
     });
-    $urlRouterProvider.otherwise("/");
   });
 }(angular.module('spotchat')))
