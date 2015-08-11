@@ -1,4 +1,13 @@
-<input type="text" placeholder="Tjena">
-lol
-<a ui-sref="draw"><h1>hej</h1></a>
-asd
+<form ng-submit="searchTrack(searchInput)">
+	<label class="item item-input">
+		<i class="icon ion-search placeholder-icon"></i>
+		<input type="search" placeholder="Search" ng-model="searchInput">
+	</label>
+</form>
+<div class="list">
+    <a class="item item-thumbnail-left" href="#" ng-repeat="track in tracks" ng-click="chooseTrack(track)">
+      <img ng-src="{{ track.album.images[0].url }}">
+      <h2> {{ track.name }} </h2>
+      <p> {{ track.artists[0].name}} </p>
+    </a>
+</div>

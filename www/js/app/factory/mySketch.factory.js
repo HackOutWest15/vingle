@@ -1,21 +1,22 @@
 (function (app) {
-    var lines = [];
-    app.factory('mySketch', function ($state) {
+    app.factory('mySketch', function ($state,$rootScope) {
         return function (sketch) {
+            var lines=[];
             var lastTouch = null;
             var img;
             var startTime = new Date().getTime();
+
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage("/img/1993photo.jpg");
             };
             sketch.draw = function () {
-
                 sketch.background(0);
                 sketch.fill(255);
                 sketch.stroke(255);
 
                 sketch.image(img, 0, 0, sketch.width, sketch.height);
+                if (!lines) return;
                 for (var i = 0; i < lines.length; i++) {
                     var line = lines[i];
                     sketch.strokeWeight(strokeWeight(line.width));
@@ -23,6 +24,10 @@
                 }
             };
             sketch.touchStarted = function () {
+                if (getAudioTime() > 3000){
+                    $rootScope.lines = lines;
+                    $state.go('playback');
+                }
                 lastTouch = null;
             };
             sketch.touchMoved = function () {
@@ -36,7 +41,6 @@
                 return false;
             }
             sketch.windowResized = function () {
-
                 sketch.resizeCanvas(sketch.windowWidth, sketch.windowWidth);
             }
             function getHeight() {

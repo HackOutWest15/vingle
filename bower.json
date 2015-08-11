@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.0.1"
   },
   "dependencies": {
-    "angular-spotify": "~1.0.0"
+    "angular-spotify": "~1.0.0",
+    "rxjs": "~3.0.0"
   }
 }

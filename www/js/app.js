@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('spotchat', ['ionic', 'angular-p5'])
+angular.module('spotchat', ['ionic', 'spotify', 'angular-p5'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
