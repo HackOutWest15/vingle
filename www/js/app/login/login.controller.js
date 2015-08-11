@@ -1,7 +1,5 @@
 (function(app){
-  app.controller('loginController', function($scope, $rootScope){
-    $scope.login = function(){
-      console.log($rootScope.API_URL);
-    }
+  app.controller('loginController', function($scope, APIHandler){
+    $scope.login = APIHandler.login;
   });
 }(angular.module('spotchat')))
