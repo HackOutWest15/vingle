@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('spotchat', ['ionic'])
+angular.module('spotchat', ['ionic', 'ngOpenFB'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -17,11 +17,13 @@ angular.module('spotchat', ['ionic'])
     }
   });
 })
-.run(function($state, $stateParams, $rootScope){
+.run(function($location, $stateParams, $rootScope){
   if(window.localStorage.currentUser == undefined){
-    // $state.go('login')
-    window.location.replace('/#/login')
+    $location.path('/login');
   }
+})
+.run(function($ionicPlatform, ngFB) {
+  ngFB.init( {appId: '412805898909794'} );
 })
 .config(function($urlRouterProvider){
 
