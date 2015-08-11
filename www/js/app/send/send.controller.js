@@ -1,5 +1,5 @@
 (function(app){
-  app.controller('sendController', function($scope, $rootScope){
+  app.controller('sendController', function($scope, $rootScope, APIHandler){
     $scope.choosenFriends = [];
 
     $scope.user = $rootScope.currentUser;
@@ -29,5 +29,9 @@
         $scope.friends = $scope.user.friends;
       }
     });
+
+    $scope.send = function(){
+      APIHandler.postMessage($scope.choosenFriends);
+    }
   });
 }(angular.module('spotchat')))
