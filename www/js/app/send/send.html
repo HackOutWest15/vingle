@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-item ng-repeat="friend in user.friends" ng-click="chooseFriend(friend)">
+    {{friend.name}}
+    <i ng-if="friend.choosen">x</i>
+  </ion-item>
+</ion-list>
