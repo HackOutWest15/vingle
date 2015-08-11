@@ -1,5 +1,4 @@
 (function(app){
-  app.controller('drawController', function($scope){
-    $scope.hej = "tja";
+  app.controller('drawController', function($scope,$window,$stateParams){
   });
-}(angular.module('spotchat')))
+}(angular.module('spotchat')));
