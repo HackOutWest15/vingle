@@ -20,6 +20,8 @@ angular.module('spotchat', ['ionic', 'ngOpenFB'])
 .run(function($location, $stateParams, $rootScope){
   if(window.localStorage.currentUser == undefined){
     $location.path('/login');
+  }else{
+    $rootScope.currentUser = JSON.parse(window.localStorage.currentUser);
   }
 })
 .run(function($ionicPlatform, ngFB) {
