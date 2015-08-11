@@ -1,6 +1,6 @@
 (function(app){
   app.controller('sendController', function($scope, $rootScope){
-    var choosenFriends = [];
+    $scope.choosenFriends = [];
 
     $scope.user = $rootScope.currentUser;
     $scope.user.friends = $scope.user.friends.map(function(friend){
@@ -13,6 +13,10 @@
     $scope.chooseFriend = function(friend){
       console.log("Clicked on " + friend.name);
       friend.choosen = !friend.choosen;
+      if(friend.choosen)
+        $scope.choosenFriends.push(friend);
+      else
+        _.pull($scope.choosenFriends, friend);
     }
 
     $scope.$watch('searchQuery', function(newValue, oldValue){

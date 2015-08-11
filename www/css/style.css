@@ -13,3 +13,8 @@
   width: 10%;
   float: left;
 }
+.choosen-friend{
+  border-radius: 100%;
+  width: 25px;
+  float: left;
+}
