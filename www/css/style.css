@@ -18,3 +18,7 @@
   width: 25px;
   float: left;
 }
+
+.left {
+	margin-left: -15vw;
+}
