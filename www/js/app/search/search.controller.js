@@ -1,5 +1,5 @@
 (function (app) {
-    app.controller('searchController', function ($scope, Spotify, $rootScope, $state) {
+    app.controller('searchController', function ($scope, Spotify,$location, $rootScope, $state) {
         // start
         var recentTimer;
         $scope.$watch('searchInput', function (searchQuery) {
