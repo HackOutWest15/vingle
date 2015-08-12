@@ -10,6 +10,7 @@ angular.module('spotchat').factory('APIHandler', function($http, $rootScope, $q)
         promises.push($http.post(API_URL + "/message",{
           randomId: randomId,
           from: $rootScope.currentUser.id,
+          fromName: $rootScope.currentUser.name,
           track: {
             uri: $rootScope.track.uri,
             artist: $rootScope.track.artists[0].name,
@@ -19,6 +20,7 @@ angular.module('spotchat').factory('APIHandler', function($http, $rootScope, $q)
           },
 
           receiver: friend.id,
+          receiverName: friend.name,
           watched: false,
           msg: $rootScope.lines
         }));
