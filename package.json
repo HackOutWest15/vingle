@@ -22,7 +22,7 @@
     "cordova-plugin-splashscreen",
     "com.ionic.keyboard"
   ],
-  "scripts": {"postinstall": "bower install"},
+  "scripts": {"postinstall": "./node_modules/bower/bin/bower install"},
   "cordovaPlatforms": [
     "ios"
   ]
