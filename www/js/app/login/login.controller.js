@@ -7,8 +7,8 @@
     $scope.login = function(){
       ngFB.login({scope: 'email, user_friends'}).then(
         function (response) {
-            console.log(response)
             if (response.status === 'connected') {
+                window.localStorage.accessToken = response.authResponse.accessToken;
                 console.log('Facebook login succeeded');
                 ngFB.api({
                   path: '/me',
