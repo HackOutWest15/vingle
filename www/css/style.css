@@ -19,6 +19,31 @@
   float: left;
 }
 
-.left {
-	margin-left: -15vw;
+/*
+ *  LOGIN
+ */
+.login-container{
+  padding-top: 10%;
+  background-image: url('/img/Vingle_sign_up_bg.jpg');
+  background-size: cover;
 }
+.login-info-text{
+  width: 80%;
+  margin: 0 auto;
+}
+.login-button-container{
+  width: 80%;
+  max-width: 400px;
+  min-height: 100px;
+  margin: 50% auto;
+  bottom: 10%;
+  /*left: auto;*/
+  /*right: auto;*/
+  /*position: absolute;*/
+  cursor: pointer;
+}
+.login-button{
+  width: 100%;
+  margin: 0 auto;
+}
+>>>>>>> f3ac1ceadceafd7fddafd15e1c0387234a2c4f19

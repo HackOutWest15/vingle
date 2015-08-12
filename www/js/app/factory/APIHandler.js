@@ -2,6 +2,7 @@ angular.module('spotchat').factory('APIHandler', function($http, $rootScope, $q)
   var API_URL = 'https://vingle-backend.herokuapp.com';
 
   return {
+    API_URL: API_URL,
     postMessage: function(friends){
       var randomId = Math.random();
 

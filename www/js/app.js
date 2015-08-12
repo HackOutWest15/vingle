@@ -30,7 +30,7 @@ angular.module('spotchat', ['ionic', 'spotify', 'ngOpenFB', 'angular-p5'])
 .config(function($urlRouterProvider){
 
   if(window.localStorage.currentUser != undefined){
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/search');
   }else{
     $urlRouterProvider.otherwise('/login');
   }
