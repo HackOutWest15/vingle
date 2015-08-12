@@ -1,4 +1,10 @@
-<div>
-    <p5 sketch="playbackSketch" data="lines"></p5>
+<div class="bar bar-header bar-stable">
+  <a class="button icon-left ion-chevron-left button-clear button-dark pull-left" ng-click="goBack()"></a>
+  <h1 class="title"><img src="/img/Vingle_logo_turquoise.svg"></h1>
+</div>
+<div class="header-margin">
+  <div id="sketch-container" class="sketch-container">
+      <p5 id="sketch" sketch="playbackSketch" data="lines"></p5>
+  </div>
 </div>
 <audio id="audioPlayback" src="{{track.preview_urlTrusted}}" autoplay="false"></audio>

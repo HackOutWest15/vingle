@@ -31,6 +31,10 @@ angular.module('spotchat', ['ionic', 'spotify', 'ngOpenFB', 'angular-p5'])
       $rootScope.currentUser = user;
     })
   }
+
+  $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
+     $rootScope.previousState = from
+  });
 })
 .run(function($ionicPlatform, ngFB) {
   ngFB.init( {appId: '412805898909794'} );

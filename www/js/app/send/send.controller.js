@@ -38,8 +38,8 @@
                 $rootScope.track = undefined;
                 $rootScope.lines = undefined;
                 // go to home screen
+                $state.go('outbox');
             });
-            $state.go('playback');
 
         }
 

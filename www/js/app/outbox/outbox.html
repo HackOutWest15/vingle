@@ -1,10 +1,15 @@
-<div class="list">
-    <a class="item item-thumbnail-left" href="#" ng-repeat="message in sentMessages" ng-click="openMessage(message)">
-      <img ng-src="{{ message.track.img}}">
-      <h2> {{ message.track.name }} </h2>
-      <p> {{ message.track.artist }} </p>
-      <img ng-repeat="friend in sentMessages | limitTo: 6" ng-src="http://graph.facebook.com/{{friend.id}}/picture?width=270&height=270" class="pull-left choosen-friend">
-    </a>
+<div class="bar bar-header bar-stable">
+  <h1 class="title"><img src="/img/Vingle_logo_turquoise.svg"></h1>
+</div>
+<div class="header-margin">
+  <div class="list">
+      <a class="item item-thumbnail-left" href="#" ng-repeat="message in sentMessages" ng-click="openMessage(message)">
+        <img ng-src="{{ message.track.img}}">
+        <h2> {{ message.track.name }} </h2>
+        <p> {{ message.track.artist }} </p>
+        <img ng-repeat="friend in sentMessages | limitTo: 6" ng-src="http://graph.facebook.com/{{friend.id}}/picture?width=270&height=270" class="pull-left choosen-friend">
+      </a>
+  </div>
 </div>
 
 <div class="tabs tabs-icon-only">
@@ -20,5 +25,5 @@
 </div>
 
 <div class="pull-left">
-    
+
 </div>
