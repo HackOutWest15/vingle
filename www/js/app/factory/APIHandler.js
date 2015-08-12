@@ -12,11 +12,12 @@ angular.module('spotchat').factory('APIHandler', function($http, $rootScope, $q)
           from: $rootScope.currentUser.id,
           track: {
             uri: $rootScope.track.uri,
-            artist: $rootScope.track.artist,
+            artist: $rootScope.track.artists[0].name,
             name: $rootScope.track.name,
-            preview_url: $rootScope.track.preview_url
+            preview_url: $rootScope.track.preview_url,
+            img: $rootScope.track.album.images[0].url
           },
-          img: $rootScope.track.album.images[0].url,
+
           receiver: friend.id,
           watched: false,
           msg: $rootScope.lines

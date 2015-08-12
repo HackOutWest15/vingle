@@ -10,7 +10,7 @@
                 function (x) {
                     return x < data.length;
                 },
-                function (x) {
+                function (x) {ƒ
                     return x + 1;
                 },
                 function (x) {
