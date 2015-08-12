@@ -14,7 +14,10 @@
         return !audio.paused;
       }
     };
-
+    $scope.done=function(){
+      audio.pause();
+      $state.go('send');
+    }
     $scope.timeLeft = 30;
     setInterval(function(){
       $scope.$apply(function(){
