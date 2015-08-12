@@ -9,6 +9,9 @@
       },
       pause: function(){
         audio.pause();
+      },
+      playing: function(){
+        return !audio.paused;
       }
     };
 
