@@ -39,7 +39,7 @@ angular.module('spotchat', ['ionic', 'spotify', 'ngOpenFB', 'angular-p5'])
 .run(function($ionicPlatform, ngFB) {
   ngFB.init( {appId: '412805898909794',
               accessToken: window.localStorage.accessToken
-              } );
+              });
 })
 .config(function($urlRouterProvider){
 

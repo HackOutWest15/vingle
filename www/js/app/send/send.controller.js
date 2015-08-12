@@ -1,6 +1,6 @@
 (function (app) {
     app.controller('sendController', function ($scope, $rootScope, APIHandler, $state,ngFB) {
-        ngFB.api({
+        /*ngFB.api({
             path: '/me',
             params: {fields:'friends'}
         }).then(function(user){
@@ -9,8 +9,6 @@
             $rootScope.currentUser = user;
             init();
         });
-        if (!$rootScope.lines || !$rootScope.track)
-            $state.go('search');
 
         function init(){
             $scope.choosenFriends = [];
@@ -21,8 +19,9 @@
                 return friend;
             });
             $scope.friends = $scope.user.friends
-
-        }
+        }*/
+        if (!$rootScope.lines || !$rootScope.track)
+            $state.go('search');
 
         $scope.chooseFriend = function (friend) {
             console.log("Clicked on " + friend.name);
@@ -48,7 +47,7 @@
         $scope.send = function () {
             APIHandler.postMessage($scope.choosenFriends).then(function (response) {
                 $rootScope.track = undefined;
-                $rootScope.lines = undefined;
+                $rootScope.lines = [];
                 // go to home screen
                 $state.go('outbox');
             });

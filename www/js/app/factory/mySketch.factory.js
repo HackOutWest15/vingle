@@ -14,14 +14,14 @@
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage($rootScope.track.album.images[0].url);
                 audio.play();
+                audio.
                 $rootScope.lines = lines;
             };
 
-            var done = false;
+            $rootScope.mySketchDone=false;
             sketch.draw = function () {
-                if (!done && audio.currentTime == audio.duration){
-
-                    done = true;
+                if (!$rootScope.mySketchDone && audio.currentTime == audio.duration){
+                    $rootScope.mySketchDone=true;
                     audio.pause();
                     $state.go('send');
                 }
