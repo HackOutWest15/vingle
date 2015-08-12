@@ -13,7 +13,11 @@
                 }, 500)
             }
         })
-
+        $scope.logout = function(){
+            $rootScope.currentUser=null;
+            delete window.localStorage.currentUser;
+            $location.path('/login');
+        }
         $scope.chooseTrack = function (track) {
             $rootScope.track = track;
             $state.go('draw');
