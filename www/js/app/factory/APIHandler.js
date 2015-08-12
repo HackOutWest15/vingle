@@ -1,5 +1,5 @@
 angular.module('spotchat').factory('APIHandler', function($http, $rootScope){
-  var API_URL ='http://vingle-backend.herokuapp.com/';
+  var API_URL ='https://vingle-backend.herokuapp.com/';
 
   return {
     postMessage: function(friends, msg, uri){
