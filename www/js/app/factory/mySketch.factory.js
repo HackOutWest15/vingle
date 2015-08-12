@@ -5,7 +5,7 @@
             var lastTouch = null;
             var img;
             var startTime = new Date().getTime();
-            var audio = document.getElementById('audioPlayback');
+            var audio = document.getElementById('audioDraw');
 
             window.AudioContext = window.AudioContext || window.webkitAudioContext;
             var context = new AudioContext();
