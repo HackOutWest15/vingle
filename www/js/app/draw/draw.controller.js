@@ -14,19 +14,20 @@
         return !audio.paused;
       }
     };
-    $scope.done=function(){
-      $rootScope.mySketchDone=true;
-      audio.pause();
-      $state.go('send');
-    }
+
     $scope.timeLeft = 30;
-    setInterval(function(){
+    var x = setInterval(function(){
       $scope.$apply(function(){
         console.log(audio.duration - audio.currentTime);
         $scope.timeLeft = Math.floor(audio.duration - audio.currentTime);
       });
     }, 1000)
-
+    $scope.done=function(){
+      $rootScope.mySketchDone=true;
+      audio.pause();
+      clearInterval(x);
+      $state.go('send');
+    }
     $scope.goToSearch = function(){
       audio.pause();
       $state.go('search');
