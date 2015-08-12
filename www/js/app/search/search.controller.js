@@ -2,22 +2,21 @@
   app.controller('searchController', function($scope, Spotify, $rootScope, $state){
     // start
 
-   $scope.searchTrack = function(searchQuery) {
-   		Spotify.search(searchQuery, 'track').then(function (data) {
-  			$scope.tracks = data.tracks.items;
+    $scope.$watch('searchInput', function(searchQuery){
+      if(searchQuery){
+        window.setTimeout(function(){
+          Spotify.search(searchQuery, 'track').then(function (data) {
+            $scope.tracks = data.tracks.items;
+            console.log(data);
+          });
+        }, 1000)
+      }
+    })
 
-  			console.log(data);
-
-		});
-   }
-
-   $scope.chooseTrack = function(track) {
-		$rootScope.track = track;
-		$state.go('draw')
+    $scope.chooseTrack = function(track) {
+      $rootScope.track = track;
+  		$state.go('draw');
    		console.log(track);
-   }
-
-
-
+    }
   });
 }(angular.module('spotchat')))

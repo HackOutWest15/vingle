@@ -1,16 +1,30 @@
 (function (app) {
-    app.factory('mySketch', function ($state,$rootScope) {
+    app.factory('mySketch', function ($state, $rootScope) {
         return function (sketch) {
             var lines=[];
             var lastTouch = null;
             var img;
             var startTime = new Date().getTime();
+            var audio = document.getElementById('audioPlayback');
+
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
+            var context = new AudioContext();
 
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage($rootScope.track.album.images[0].url);
+                audio.play();
             };
+
+            var done = false;
             sketch.draw = function () {
+                if (!done && audio.currentTime == audio.duration){
+                    $rootScope.lines = lines;
+                    done = true;
+                    audio.pause();
+                    $state.go('send');
+                }
+
                 sketch.background(0);
                 sketch.fill(255);
                 sketch.stroke(255);
@@ -24,10 +38,6 @@
                 }
             };
             sketch.touchStarted = function () {
-                if (getAudioTime() > 3000){
-                    $rootScope.lines = lines;
-                    $state.go('send');
-                }
                 lastTouch = null;
             };
             sketch.touchMoved = function () {
@@ -55,7 +65,7 @@
                 return getWidth() * (percentage / 100);
             }
             function getAudioTime() {
-                return new Date().getTime()-startTime;
+                return Math.floor(audio.currentTime*1000);
             }
         };
     });

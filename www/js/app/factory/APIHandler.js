@@ -1,21 +1,23 @@
-angular.module('spotchat').factory('APIHandler', function($http, $rootScope){
-  var API_URL ='https://vingle-backend.herokuapp.com/';
+angular.module('spotchat').factory('APIHandler', function($http, $rootScope, $q){
+  var API_URL = 'https://vingle-backend.herokuapp.com';
 
   return {
-    postMessage: function(friends, msg, uri){
-      friends = friends.map(function(friend){
-        return {
-          id: friend.id,
-          watched: false
-        };
-      });
+    postMessage: function(friends){
+      var randomId = Math.random();
 
-      return $http.post(API_URL + "/message",{
-        from: $rootScope.currentUser.id,
-        uri: $rootScope.track.uri,
-        msg: $rootScope.lines,
-        receivers: friends
+      var promises = []
+      friends.forEach(function(friend){
+        promises.push($http.post(API_URL + "/message",{
+          randomId: randomId,
+          from: $rootScope.currentUser.id,
+          uri: $rootScope.track.uri,
+          img: $rootScope.track.album.images[0].url,
+          msg: $rootScope.lines,
+          receiver: friend.id,
+          watched: false
+        }));
       });
+      return $q.all(promises);
     }
   };
 });
