@@ -6,5 +6,20 @@
   <div id="sketch-container" class="sketch-container">
       <p5 id="sketch" sketch="playbackSketch" data="lines"></p5>
   </div>
+  <div class="playback-info">
+    <div class="half">
+      <h3>
+        {{ track.name }}
+      </h3>
+      <p>
+        {{ track.artist }}
+      </p>
+    </div>
+    <div class="half">
+      <h3 style="text-align:right;">
+        {{ timeLeft }}s
+      </h3>
+    </div>
+  </div>
 </div>
 <audio id="audioPlayback" src="{{track.preview_urlTrusted}}" autoplay="false"></audio>
