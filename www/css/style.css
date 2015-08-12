@@ -11,6 +11,10 @@
   float: left;
   width: 50%;
 }
+.playback-info{
+  width: 80%;
+  margin: 0 auto;
+}
 /*
  *  SEND
  */
