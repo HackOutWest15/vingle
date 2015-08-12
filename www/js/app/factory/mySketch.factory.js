@@ -13,6 +13,7 @@
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage($rootScope.track.album.images[0].url);
+                audio.currentTime = 0;
                 audio.play();
             };
 
@@ -30,6 +31,9 @@
                 sketch.stroke(255);
 
                 sketch.image(img, 0, 0, sketch.width, sketch.height);
+
+                var margin = (window.innerHeight - sketch.height)/2;
+                document.getElementById('sketch-container').style.paddingTop = margin+"px";
                 if (!lines) return;
                 for (var i = 0; i < lines.length; i++) {
                     var line = lines[i];
