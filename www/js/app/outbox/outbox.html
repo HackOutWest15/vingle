@@ -1,19 +1,15 @@
 <div class="bar bar-header bar-stable">
   <h1 class="title"><img src="/img/Vingle_logo_turquoise.svg"></h1>
 </div>
-<div class="header-margin">
-  <div class="half button box-btn" ng-click="changeState('inbox')">
-    <p class="text-center">
-      Received
-    </p>
-  </div>
-  <div class="half button box-btn box-choosen" ng-click="changeState('outbox')">
-    <p class="text-center">
-      Sent
-    </p>
-  </div>
+<div class="header-margin bar bar-header">
+  <button class="half button box-btn text-center" ng-click="changeState('inbox')">
+    Received
+  </button>
+  <button class="half button box-btn box-choosen text-center" ng-click="changeState('outbox')">
+    Sent
+  </button>
 </div>
-<div class="header-margin">
+<div class="header-margin2">
   <div class="list">
       <a class="item item-thumbnail-left" href="#" ng-repeat="message in sentMessages | orderBy: reverse" ng-click="openMessage(message)">
         <img ng-src="{{ message.track.img}}">

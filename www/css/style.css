@@ -4,6 +4,9 @@
 .header-margin{
   margin-top: 44px;
 }
+.header-margin2{
+  margin-top: 88px;
+}
 .half{
   float: left;
   width: 50%;
@@ -26,7 +29,7 @@
   border-radius: 100%;
   width: 25px;
   float: left;
-  margin-right: 1vw; 
+  margin-right: 1vw;
 }
 
 /*
