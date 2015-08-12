@@ -33,7 +33,7 @@
                 });
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
-                img = sketch.loadImage($rootScope.track.album.images[0].url);
+                img = sketch.loadImage($rootScope.track.img);
             };
             sketch.draw = function () {
                 sketch.background(0);
