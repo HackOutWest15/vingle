@@ -35,11 +35,11 @@
         $scope.$watch('searchQuery', function (newValue, oldValue) {
             if (newValue) {
                 var regex = new RegExp(".*" + newValue.toLowerCase() + ".*", "g");
-                $scope.friends = $rootScope.currentUser.user.friends.filter(function (f) {
+                $scope.friends = $rootScope.currentUser.friends.filter(function (f) {
                     return f.name.toLowerCase().match(regex);
                 });
             } else {
-                $scope.friends = $rootScope.currentUser.user.friends;
+                $scope.friends = $rootScope.currentUser.friends;
             }
         });
 
