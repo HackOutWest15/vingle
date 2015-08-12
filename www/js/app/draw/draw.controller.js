@@ -15,6 +15,14 @@
       }
     };
 
+    $scope.timeLeft = 30;
+    setInterval(function(){
+      $scope.$apply(function(){
+        console.log(audio.duration - audio.currentTime);
+        $scope.timeLeft = Math.floor(audio.duration - audio.currentTime);
+      });
+    }, 1000)
+
     $scope.goToSearch = function(){
       audio.pause();
       $state.go('search');

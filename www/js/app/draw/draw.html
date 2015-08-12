@@ -6,6 +6,18 @@
   <div id="sketch-container" class="sketch-container">
       <p5 id="sketch" sketch="mySketch"></p5>
   </div>
+  <div class="playback-info">
+    <div class="half">
+      <h5>
+        {{ track.name }}
+      </h5>
+    </div>
+    <div class="half">
+      <h5 style="text-align:right;">
+        {{ timeLeft }}s
+      </h5>
+    </div>
+  </div>
 </div>
 <div class="bar bar-footer">
   <a ng-if="!music.playing()" class="ion-play draw-media-button" ng-click="music.play()"></a>
