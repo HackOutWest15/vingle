@@ -1,5 +1,8 @@
 (function(app){
-  app.controller('sendController', function($scope, $rootScope, APIHandler){
+  app.controller('sendController', function($scope, $rootScope, APIHandler, $state){
+    if(!$rootScope.lines || !$rootScope.track)
+      $state.go('search');
+
     $scope.choosenFriends = [];
 
     $scope.user = $rootScope.currentUser;
@@ -31,9 +34,12 @@
     });
 
     $scope.send = function(){
-      APIHandler.postMessage($scope.choosenFriends).then(function(response){
+      $state.go('playback');
+      // APIHandler.postMessage($scope.choosenFriends).then(function(response){
+        // $rootScope.track = undefined;
+        // $rootScope.lines = undefined;
         // go to home screen
-      });
+      // });
     }
   });
 }(angular.module('spotchat')))

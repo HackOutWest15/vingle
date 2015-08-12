@@ -1,4 +1,12 @@
 <div>
     <p5 sketch="mySketch"></p5>
 </div>
-
+<div class="bar bar-footer">
+  <button ng-click="music.play()">
+    play
+  </button>
+  <button ng-click="music.pause()">
+    pause
+  </button>
+  <audio id="audioPlayback" src="{{track.preview_url}}" autoplay="false"></audio>
+</div>
