@@ -22,14 +22,14 @@ angular.module('spotchat', ['ionic', 'spotify', 'ngOpenFB', 'angular-p5'])
     $location.path('/login');
   }else{
     $rootScope.currentUser = JSON.parse(window.localStorage.currentUser);
-    ngFB.api({
-      path: '/me',
-      params: {fields:'friends'}
-    }).then(function(user){
-      user.friends = user.friends.data;
-      window.localStorage.currentUser = JSON.stringify(user);
-      $rootScope.currentUser = user;
-    })
+    // ngFB.api({
+    //   path: '/me',
+    //   params: {fields:'friends'}
+    // }).then(function(user){
+    //   user.friends = user.friends.data;
+    //   window.localStorage.currentUser = JSON.stringify(user);
+    //   $rootScope.currentUser = user;
+    // })
   }
 
   $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {

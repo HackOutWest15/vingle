@@ -4,6 +4,10 @@
 .header-margin{
   margin-top: 44px;
 }
+.half{
+  float: left;
+  width: 50%;
+}
 /*
  *  SEND
  */
@@ -53,4 +57,13 @@
  */
 .draw-media-button{
   font-size: xx-large;
+}
+/*
+ *  BOX
+ */
+.box-btn{
+  background-color: rgba(248, 248, 248, 0.26);
+}
+.box-choosen{
+  background-color: rgba(31, 190, 187, 0.18);
 }
