@@ -14,8 +14,8 @@
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage($rootScope.track.album.images[0].url);
                 audio.play();
-                audio.
-                $rootScope.lines = lines;
+
+                    $rootScope.lines = lines;
             };
 
             $rootScope.mySketchDone=false;
