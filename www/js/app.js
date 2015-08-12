@@ -17,11 +17,19 @@ angular.module('spotchat', ['ionic', 'spotify', 'ngOpenFB', 'angular-p5'])
     }
   });
 })
-.run(function($location, $stateParams, $rootScope){
+.run(function($location, $stateParams, $rootScope, ngFB){
   if(window.localStorage.currentUser == undefined){
     $location.path('/login');
   }else{
     $rootScope.currentUser = JSON.parse(window.localStorage.currentUser);
+    ngFB.api({
+      path: '/me',
+      params: {fields:'friends'}
+    }).then(function(user){
+      user.friends = user.friends.data;
+      window.localStorage.currentUser = JSON.stringify(user);
+      $rootScope.currentUser = user;
+    })
   }
 })
 .run(function($ionicPlatform, ngFB) {
