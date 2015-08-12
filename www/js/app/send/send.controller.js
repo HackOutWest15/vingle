@@ -1,5 +1,13 @@
 (function (app) {
-    app.controller('sendController', function ($scope, $rootScope, APIHandler, $state) {
+    app.controller('sendController', function ($scope, $rootScope, APIHandler, $state,ngFB) {
+        ngFB.api({
+            path: '/me',
+            params: {fields:'friends'}
+        }).then(function(user){
+            user.friends = user.friends.data;
+            window.localStorage.currentUser = JSON.stringify(user);
+            $rootScope.currentUser = user;
+        });
         if (!$rootScope.lines || !$rootScope.track)
             $state.go('search');
 
