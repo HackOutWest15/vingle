@@ -1,9 +1,9 @@
 <div class="list">
-    <a class="item item-avatar" href="#" ng-repeat="user in users">
-      <img ng-src="{{ avatar }}">
-      <h2>{{ message.username }}</h2>
-      <p>{{ message.songTitle }}</p>
-      <p>{{ message.artist }}</p>
+    <a class="item item-avatar" href="#" ng-repeat="message in incomingMessages" ng-click="openMessage(message)">
+      <img ng-src="http://graph.facebook.com/{{ message.from }}/picture?width=270&height=270">
+      <h2>{{ message.fromName }}</h2>
+      <p>{{ message.track.name }}</p>
+      <p>{{ message.track.artist }}</p>
     </a>
 </div>
 

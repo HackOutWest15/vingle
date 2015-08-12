@@ -8,6 +8,7 @@ angular.module('spotchat').factory('APIHandler', function($http, $rootScope, $q)
 
       var promises = []
       friends.forEach(function(friend){
+        console.log($rootScope.track);
         promises.push($http.post(API_URL + "/message",{
           randomId: randomId,
           from: $rootScope.currentUser.id,

@@ -1,6 +1,6 @@
 (function(app){
   app.controller('drawController', function($scope,$sce,$rootScope){
-    $scope.track.preview_url = $sce.trustAsResourceUrl($rootScope.track.preview_url);
+    $scope.track.preview_urlTrusted = $sce.trustAsResourceUrl($rootScope.track.preview_url);
 
     var audio = document.getElementById('audioPlayback');
     $scope.music = {

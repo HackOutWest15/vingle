@@ -31,9 +31,11 @@
                 function () {
                     console.log('Completed');
                 });
+            var audio = document.getElementById('audioPlayback');
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage($rootScope.playback.track.img);
+                audio.play();
             };
             sketch.draw = function () {
                 sketch.background(0);

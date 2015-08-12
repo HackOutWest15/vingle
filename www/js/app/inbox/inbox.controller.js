@@ -1,24 +1,16 @@
 (function(app){
-  app.controller('inboxController', function($scope, $rootScope, APIHandler){
+  app.controller('inboxController', function($scope, $rootScope, APIHandler,$http,$state){
     // start
-  
-  $scope.getSentMessage = function() {
-
+  $http.get(APIHandler.API_URL+"/message?receiver="+$rootScope.currentUser.id).then(function(result){
+    $scope.incomingMessages = result.data;
+    console.log(result.data);
+  });
+  $scope.openMessage = function(message) {
+    $rootScope.playback = {};
+    $rootScope.playback.lines = message.msg;
+    $rootScope.playback.track = message.track;
+    $state.go('playback');
   }
-
-  $scope.getReceivedMessage = function() {
-
-  }
-
-  $scope.showMessages = function() {
-
-
-  }
-
-
-
-
-
   });
 }(angular.module('spotchat')))
 
