@@ -1,7 +1,7 @@
 (function (app) {
     app.factory('playbackSketch', function ($state, $rootScope) {
         return function (sketch) {
-            var data = _.sortBy($rootScope.lines,function(e){return e.timestamp; });
+            var data = _.sortBy($rootScope.playback.lines,function(e){return e.timestamp; });
             var img;
             var lines=[];
             var start = Date.now();
@@ -33,7 +33,7 @@
                 });
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
-                img = sketch.loadImage($rootScope.track.img);
+                img = sketch.loadImage($rootScope.playback.track.img);
             };
             sketch.draw = function () {
                 sketch.background(0);
