@@ -14,7 +14,7 @@
 
         function init(){
             $scope.choosenFriends = [];
-            console.log($scope.user.friends);
+
             $scope.user = $rootScope.currentUser;
             $scope.user.friends = $scope.user.friends.map(function (friend) {
                 friend.choosen = false;
