@@ -8,7 +8,7 @@
 
             sketch.setup = function () {
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
-                img = sketch.loadImage("/img/1993photo.jpg");
+                img = sketch.loadImage($rootScope.track.album.images[0].url);
             };
             sketch.draw = function () {
                 sketch.background(0);
