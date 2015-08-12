@@ -67,6 +67,8 @@
  */
 .box-btn{
   background-color: rgba(248, 248, 248, 0.26);
+  border-radius: 0;
+  border-color: rgba(0,0,0,0);
 }
 .box-choosen{
   background-color: rgba(31, 190, 187, 0.18);
