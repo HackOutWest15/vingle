@@ -7,19 +7,22 @@
             user.friends = user.friends.data;
             window.localStorage.currentUser = JSON.stringify(user);
             $rootScope.currentUser = user;
+            init();
         });
         if (!$rootScope.lines || !$rootScope.track)
             $state.go('search');
 
-        $scope.choosenFriends = [];
+        function init(){
+            $scope.choosenFriends = [];
 
-        $scope.user = $rootScope.currentUser;
-        $scope.user.friends = $scope.user.friends.map(function (friend) {
-            friend.choosen = false;
-            return friend;
-        });
-        $scope.friends = $scope.user.friends
+            $scope.user = $rootScope.currentUser;
+            $scope.user.friends = $scope.user.friends.map(function (friend) {
+                friend.choosen = false;
+                return friend;
+            });
+            $scope.friends = $scope.user.friends
 
+        }
 
         $scope.chooseFriend = function (friend) {
             console.log("Clicked on " + friend.name);
