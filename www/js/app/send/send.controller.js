@@ -42,5 +42,9 @@
             $state.go('playback');
 
         }
+
+        $scope.goToSearch = function(){
+          $state.go('search');
+        }
     });
 }(angular.module('spotchat')));

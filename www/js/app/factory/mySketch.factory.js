@@ -33,7 +33,7 @@
                 sketch.image(img, 0, 0, sketch.width, sketch.height);
 
                 var margin = (window.innerHeight - sketch.height)/2;
-                document.getElementById('sketch-container').style.paddingTop = margin+"px";
+                document.getElementById('sketch-container').style.paddingTop = margin-44+"px";
                 if (!lines) return;
                 for (var i = 0; i < lines.length; i++) {
                     var line = lines[i];
