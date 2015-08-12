@@ -1,10 +1,27 @@
-<div class="list">
-    <a class="item item-thumbnail-left" href="#" ng-repeat="message in sentMessages | orderBy: reverse" ng-click="openMessage(message)">
-      <img ng-src="{{ message.track.img}}">
-      <h2> {{ message.track.name }} </h2>
-      <p> {{ message.track.artist }} </p>
-      <img ng-repeat="receiver in message.receivers | limitTo: 6" ng-src="http://graph.facebook.com/{{receiver.fid}}/picture?width=270&height=270" class="choosen-friend">
-    </a>
+<div class="bar bar-header bar-stable">
+  <h1 class="title"><img src="/img/Vingle_logo_turquoise.svg"></h1>
+</div>
+<div class="header-margin">
+  <div class="half button box-btn" ng-click="changeState('inbox')">
+    <p class="text-center">
+      Received
+    </p>
+  </div>
+  <div class="half button box-btn box-choosen" ng-click="changeState('outbox')">
+    <p class="text-center">
+      Sent
+    </p>
+  </div>
+</div>
+<div class="header-margin">
+  <div class="list">
+      <a class="item item-thumbnail-left" href="#" ng-repeat="message in sentMessages | orderBy: reverse" ng-click="openMessage(message)">
+        <img ng-src="{{ message.track.img}}">
+        <h2> {{ message.track.name }} </h2>
+        <p> {{ message.track.artist }} </p>
+        <img ng-repeat="receiver in message.receivers | limitTo: 6" ng-src="http://graph.facebook.com/{{receiver.fid}}/picture?width=270&height=270" class="choosen-friend">
+      </a>
+  </div>
 </div>
 
 <div class="tabs tabs-icon-only">
@@ -20,5 +37,5 @@
 </div>
 
 <div class="pull-left">
-    
+
 </div>

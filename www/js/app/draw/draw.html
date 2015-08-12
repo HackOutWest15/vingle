@@ -1,12 +1,14 @@
-<div>
-    <p5 sketch="mySketch"></p5>
+<div class="bar bar-header bar-stable">
+  <a class="button icon-left ion-chevron-left button-clear button-dark pull-left" ng-click="goToSearch()"></a>
+  <h1 class="title"><img src="/img/Vingle_logo_turquoise.svg"></h1>
+</div>
+<div class="header-margin">
+  <div id="sketch-container" class="sketch-container">
+      <p5 id="sketch" sketch="mySketch"></p5>
+  </div>
 </div>
 <div class="bar bar-footer">
-  <button ng-click="music.play()">
-    play
-  </button>
-  <button ng-click="music.pause()">
-    pause
-  </button>
+  <a ng-if="!music.playing()" class="ion-play draw-media-button" ng-click="music.play()"></a>
+  <a ng-if="music.playing()" class="ion-pause draw-media-button" ng-click="music.pause()"></a>
   <audio id="audioPlayback" src="{{track.preview_urlTrusted}}" autoplay="false"></audio>
 </div>

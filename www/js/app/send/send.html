@@ -1,4 +1,8 @@
-<div>
+<div class="bar bar-header bar-stable">
+  <a class="button icon-left ion-chevron-left button-clear button-dark pull-left" ng-click="goToSearch()"></a>
+  <h1 class="title"><img src="/img/Vingle_logo_turquoise.svg"></h1>
+</div>
+<div class="header-margin">
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
     <input type="text" placeholder="Search" ng-model="searchQuery">
@@ -22,5 +26,5 @@
   <div class="pull-left">
     <img ng-repeat="friend in choosenFriends | limitTo: 4" ng-src="http://graph.facebook.com/{{friend.id}}/picture?width=270&height=270" class="pull-left choosen-friend">
   </div>
-  <button class="button button-clear pull-right" ng-click="send()">Send</button>
+  <button class="button button-clear pull-right ion-android-send" ng-click="send()"></button>
 </div>

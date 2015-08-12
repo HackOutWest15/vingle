@@ -1,4 +1,13 @@
-/* Empty. Add your own CSS if you like */
+.title>img{
+  height: 100%;
+}
+.header-margin{
+  margin-top: 44px;
+}
+.half{
+  float: left;
+  width: 50%;
+}
 /*
  *  SEND
  */
@@ -38,12 +47,24 @@
   min-height: 100px;
   margin: 50% auto;
   bottom: 10%;
-  /*left: auto;*/
-  /*right: auto;*/
-  /*position: absolute;*/
   cursor: pointer;
 }
 .login-button{
   width: 100%;
   margin: 0 auto;
+}
+/*
+ *  DRAW
+ */
+.draw-media-button{
+  font-size: xx-large;
+}
+/*
+ *  BOX
+ */
+.box-btn{
+  background-color: rgba(248, 248, 248, 0.26);
+}
+.box-choosen{
+  background-color: rgba(31, 190, 187, 0.18);
 }
