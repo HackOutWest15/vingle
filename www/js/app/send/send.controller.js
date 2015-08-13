@@ -1,5 +1,6 @@
 (function (app) {
     app.controller('sendController', function ($scope, $rootScope, APIHandler, $state,ngFB) {
+        $scope.choosenFriends = [];
         /*ngFB.api({
             path: '/me',
             params: {fields:'friends'}
