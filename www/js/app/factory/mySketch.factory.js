@@ -14,16 +14,14 @@
                 sketch.createCanvas(sketch.windowWidth, sketch.windowWidth);
                 img = sketch.loadImage($rootScope.track.album.images[0].url);
                 audio.play();
+                audio.onended=goToNextScreen;
                 $rootScope.lines = lines;
             };
 
             $rootScope.mySketchDone=false;
+
             sketch.draw = function () {
-                if (!$rootScope.mySketchDone && audio.currentTime == audio.duration){
-                    $rootScope.mySketchDone=true;
-                    audio.pause();
-                    $state.go('send');
-                }
+
 
                 sketch.background(0);
                 sketch.fill(255);
@@ -69,6 +67,13 @@
             }
             function getAudioTime() {
                 return Math.floor(audio.currentTime*1000);
+            }
+            function goToNextScreen(){
+
+                    $rootScope.mySketchDone=true;
+                    audio.pause();
+                    $state.go('send');
+
             }
         };
     });
