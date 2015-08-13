@@ -41,13 +41,17 @@
  *  LOGIN
  */
 .login-container{
-  padding-top: 10%;
+  padding-top: 10vh;
   background-image: url('/img/Vingle_sign_up_bg.jpg');
   background-size: cover;
 }
 .login-info-text{
   width: 80%;
   margin: 0 auto;
+  color:whitesmoke;
+}
+.login-img{
+  max-height:300px;
 }
 .login-button-container{
   width: 80%;
